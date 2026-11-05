@@ -1,0 +1,33 @@
+# ---------- 绝对不能提交：你的聊天数据与密钥 ----------
+data/
+config.py
+_tools/
+
+# 任何数据库与密钥缓存（双保险，防止放到别的目录被误加）
+*.db
+*.db-wal
+*.db-shm
+keys*.json
+wdb_work/
+
+# ---------- 环境 ----------
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# ---------- 编辑器 / 系统 ----------
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ---------- 运行产物 ----------
+*.log
+server.log
+nohup.out
+
+# ---------- 工具自己的数据 ----------
+.workbuddy/

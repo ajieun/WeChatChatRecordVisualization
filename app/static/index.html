@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>微信聊天记录 · 本地查看器</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span>微信聊天记录</div>
+    <div class="search-wrap">
+      <span class="icon">🔍</span>
+      <input id="globalSearch" type="search" placeholder="搜索所有聊天记录…（按 / 快速聚焦）" autocomplete="off" />
+      <span class="kbd">/</span>
+    </div>
+    <div class="top-actions">
+      <button class="btn" id="btnStats">统计</button>
+      <span id="metaInfo" class="conv-sub"></span>
+    </div>
+  </div>
+
+  <div id="banner" class="banner" style="display:none"></div>
+
+  <div class="main">
+    <aside class="sidebar">
+      <div class="sidebar-head"><span>会话</span><span id="chatCount"></span></div>
+      <div class="chat-search">
+        <input id="chatSearch" type="search" placeholder="搜索群组或联系人…" autocomplete="off" />
+        <div class="chat-kind-filter">
+          <button class="kind-btn active" data-kind="">全部</button>
+          <button class="kind-btn" data-kind="group">群聊</button>
+          <button class="kind-btn" data-kind="single">单聊</button>
+        </div>
+      </div>
+      <div class="chat-list" id="chatList"></div>
+    </aside>
+
+    <section class="conv">
+      <div class="conv-head">
+        <div class="avatar" id="convAvatar" style="display:none"></div>
+        <div>
+          <div class="conv-title" id="convTitle">选择左侧会话</div>
+          <div class="conv-sub" id="convSub"></div>
+        </div>
+        <div class="conv-tools">
+          <input id="inChatSearch" type="search" placeholder="在会话内搜索" />
+          <input id="dateFrom" type="date" title="起始日期" />
+          <input id="dateTo" type="date" title="结束日期" />
+          <button class="btn" id="btnClearFilter">清除</button>
+        </div>
+      </div>
+      <div class="messages" id="messages">
+        <div class="empty">从左侧选择一个会话开始查看<br />或在上方搜索框里检索全部聊天记录</div>
+      </div>
+    </section>
+  </div>
+
+  <div class="results" id="results">
+    <div class="results-head">
+      <span id="resultsTitle">搜索结果</span>
+      <button class="btn" id="btnCloseResults" style="margin-left:auto">关闭</button>
+    </div>
+    <div class="results-list" id="resultsList"></div>
+  </div>
+
+  <div class="modal-mask" id="modalMask">
+    <div class="modal" id="modal"></div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
